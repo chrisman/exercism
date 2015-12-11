@@ -1,9 +1,13 @@
 # exercism
 
+Let's do an [exercism.io](http://exercism.io/)
+
 __Working on__
-* [ ] JavaScript
+
+* JavaScript
 
 __Thinking about__
+
 * CoffeeScript
 * Haskell
 * Lua
@@ -13,10 +17,11 @@ __Thinking about__
 * Python
 
 __Done__
+
 _looking forward to finishing one :)_
 
-
 __Active language tracks__
+
 * Clojure                       clojure        38 problems
 * CoffeeScript                  coffeescript   21 problems
 * C++                           cpp            34 problems
