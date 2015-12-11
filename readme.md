@@ -18,7 +18,7 @@ __Thinking about__
 
 __Done__
 
-_looking forward to finishing one :)_
+* _looking forward to finishing one :)_
 
 __Active language tracks__
 
