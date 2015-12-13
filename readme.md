@@ -29,6 +29,8 @@ __Done__
 
   8. pangram
 
+  9. beer-song - could _not_ figure out why it was failing the final test. eventually copied my result and the expectation into text files and diffed them, and discovered the un-tested for (n === 2) case, where there's one (singular) bottle of beer remaining on the wall after you take one down and pass it around.
+
 __Someday/Maybe__
 
   * CoffeeScript
