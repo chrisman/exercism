@@ -8,7 +8,7 @@ __Working on__
 
 * JavaScript
 
-  6. gigasecond
+  7. word count
 
 __Done__
 
@@ -23,6 +23,8 @@ __Done__
   4. rna-trans
 
   5. bob - I altered test "calmly speaking about umlauts" (line 62) because I think it was wrong. It contained all capital letters, which is not speaking calmly, but shouting. I changed one character to lowercase, so that it could actually be considered calmly speaking.
+
+  6. gigasecond - i had to change the way i used module.exports in order for jasmine to work. see `gigasecond.js` vs `bob.js`
 
 __Someday/Maybe__
 
