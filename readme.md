@@ -18,7 +18,17 @@ __Thinking about__
 
 __Done__
 
-* _looking forward to finishing one :)_
+* JavaScript
+
+  1 hello-world
+
+  2 leap
+
+  3 hamming
+
+  4 rna-trans
+
+  5 bob - I altered test "calmly speaking about umlauts" (line 62) because I think it was wrong. It contained all capital letters, which is not speaking calmly, but shouting. I changed one character to lowercase, so that it could actually be considered calmly speaking.
 
 __Active language tracks__
 
