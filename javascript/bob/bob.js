@@ -18,32 +18,18 @@ module.exports = function(){
   return {
     hey: function(s) {
 
-      // return (
-      //   (s.match(/[A-Z]/gi).every(function(e, idx, a){
-      //     return (e === e.toUpperCase())
-      //   }))
-      //   ? responses['yell']
-      //   : (s.split('').pop() === '?')
-      //   ? responses['question']
-      //   : responses['whatever']
-      // )
-      if (s.split('').every(function(s){
-          return s === ' '
+      return (s.split('').every(function(s){
+          return s === ' ';
         }))
-          return responses['nothing']
-
-      if (s.match(/[A-Z]/gi)){
-        if (s.match(/[A-Z]/gi).every(function(e, idx, a){
-            return (e === e.toUpperCase())
-          })) {
-          return responses['yell']
-        }
-      }
-
-      if (s.split('').pop() === '?')
-        return responses['question']
-
-      return responses['whatever']
+        ? responses['nothing']
+        : ((s.match(/[A-Z]/gi)) // check for null
+          && (s.match(/[A-Z]/gi).every(function(e, idx, a){
+              return (e === e.toUpperCase())
+            })))
+        ? responses['yell']
+        : (s.split('').pop() === '?')
+        ? responses['question']
+        : responses['whatever']
 
     }
   }

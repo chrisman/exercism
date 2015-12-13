@@ -6,29 +6,29 @@ __Working on__
 
 * JavaScript
 
-__Thinking about__
-
-* CoffeeScript
-* Haskell
-* Lua
-* Rust
-* Java
-* Ruby
-* Python
-
 __Done__
 
 * JavaScript
 
-  1 hello-world
+  1. hello-world
 
-  2 leap
+  2. leap
 
-  3 hamming
+  3. hamming
 
-  4 rna-trans
+  4. rna-trans
 
-  5 bob - I altered test "calmly speaking about umlauts" (line 62) because I think it was wrong. It contained all capital letters, which is not speaking calmly, but shouting. I changed one character to lowercase, so that it could actually be considered calmly speaking.
+  5. bob - I altered test "calmly speaking about umlauts" (line 62) because I think it was wrong. It contained all capital letters, which is not speaking calmly, but shouting. I changed one character to lowercase, so that it could actually be considered calmly speaking.
+
+__Someday/Maybe__
+
+  * CoffeeScript
+  * Haskell
+  * Lua
+  * Rust
+  * Java
+  * Ruby
+  * Python
 
 __Active language tracks__
 
