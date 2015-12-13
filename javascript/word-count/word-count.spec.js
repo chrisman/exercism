@@ -8,7 +8,7 @@ describe('count()', function() {
     expect(words.count('word')).toEqual(expectedCounts);
   });
 
-  xit('counts one of each', function() {
+  it('counts one of each', function() {
     var expectedCounts = { one: 1, of: 1, each: 1 };
     expect(words.count('one of each')).toEqual(expectedCounts);
   });
