@@ -8,7 +8,6 @@ __Working on__
 
 * JavaScript
 
-  7. word count
 
 __Done__
 
@@ -25,6 +24,10 @@ __Done__
   5. bob - I altered test "calmly speaking about umlauts" (line 62) because I think it was wrong. It contained all capital letters, which is not speaking calmly, but shouting. I changed one character to lowercase, so that it could actually be considered calmly speaking.
 
   6. gigasecond - i had to change the way i used module.exports in order for jasmine to work. see `gigasecond.js` vs `bob.js`
+
+  7. word count - i was using a `if (curr in arr)` to build the object at first, which allowed the string value of `toString` to get assigned to the property. Using `hasOwnProperty()` instead fixed this.
+
+  8. pangram
 
 __Someday/Maybe__
 
