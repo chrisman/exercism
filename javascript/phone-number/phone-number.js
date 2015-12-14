@@ -28,4 +28,13 @@ PhoneNumber.prototype.number = function() {
   return n
 }
 
+PhoneNumber.prototype.areaCode = function(){
+  return this.userinput.slice(0,3)
+}
+
+PhoneNumber.prototype.toString = function(){
+  var s = this.userinput
+  return '('+ this.areaCode() +') '+ s.slice(3,6) +'-'+ s.slice(6)
+}
+
 module.exports = PhoneNumber
