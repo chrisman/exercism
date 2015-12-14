@@ -8,6 +8,7 @@ __Working on__
 
 * JavaScript
 
+  1. phone-number
 
 __Done__
 
