@@ -8,7 +8,7 @@ __Working on__
 
 * JavaScript
 
-  1. phone-number
+  * food-chain
 
 __Done__
 
@@ -31,6 +31,10 @@ __Done__
   8. pangram
 
   9. beer-song - could _not_ figure out why it was failing the final test. eventually copied my result and the expectation into text files and diffed them, and discovered the un-tested for (n === 2) case, where there's one (singular) bottle of beer remaining on the wall after you take one down and pass it around.
+
+  1. phone-number
+
+  1. anagram - I don't know if the `Array.prototype.slice.call(arguments)` trick was the best way to get it to accept arrays of strings and lists of strings.
 
 __Someday/Maybe__
 
