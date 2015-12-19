@@ -58,14 +58,17 @@ foodchain.prototype.verses = function(start, finish) {
 }
 
 foodchain.prototype.verse = function(num) {
-  var v, num = num - 1
-  if (num === 7) {
+  var num = num - 1
+  if (num === 7) { // final verse
     return getFirstLine(animalsAndRemarks[num])
   }
-  var notFirst = (num > 0) ? true : false
+
   var song = getFirstLine(animalsAndRemarks[num])
   while (num > 0) {
-    song += addBridge(animalsAndRemarks[num], animalsAndRemarks[num - 1])
+    song += addBridge(
+      animalsAndRemarks[num],
+      animalsAndRemarks[num - 1]
+    )
     num--
   }
   return song
