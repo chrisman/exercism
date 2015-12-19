@@ -40,14 +40,13 @@ var animalsAndRemarks = [
 function addBridge(n, m){
   return (m["animal"] == "spider") // special spider edge case
     ? `She swallowed the ${n["animal"]} to catch the ${m["animal"]} ${m["remark"].replace(/It/,'that')}\n`
+    : (m["animal"] == "fly")
+    ? `She swallowed the ${n["animal"]} to catch the ${m["animal"]}.\n${m["remark"]}\n`
     : `She swallowed the ${n["animal"]} to catch the ${m["animal"]}.\n`
 }
 
 function getFirstLine(o){
   return `I know an old lady who swallowed a ${o["animal"]}.\n${o["remark"]}\n`
-}
-function wrapItUp(o){
-  return o["remark"]+'\n'
 }
 
 foodchain.prototype.verses = function(start, finish) {
@@ -69,8 +68,6 @@ foodchain.prototype.verse = function(num) {
     song += addBridge(animalsAndRemarks[num], animalsAndRemarks[num - 1])
     num--
   }
-  if (notFirst)
-    song += wrapItUp(animalsAndRemarks[num])
   return song
 }
 
