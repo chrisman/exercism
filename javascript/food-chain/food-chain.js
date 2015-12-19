@@ -13,22 +13,27 @@ var animalsAndRemarks = [
   }
 ]
 
-function addBridge(n){
-  return `She swallowed the ${animalsAndRemarks[n]["animal"]} to catch the ${animalsAndRemarks[n - 1]["animal"]}.\n`
+function addBridge(n, m){
+  return `She swallowed the ${n["animal"]} to catch the ${m["animal"]}.\n`
 }
 
 function getFirstLine(o){
   return `I know an old lady who swallowed a ${o["animal"]}.\n${o["remark"]}\n`
 }
+function wrapItUp(o){
+  return o["remark"]+'\n'
+}
 
 foodchain.prototype.verse = function(num) {
   num = num - 1
-  console.log(num);
+  var notFirst = (num > 0) ? true : false
   var song = getFirstLine(animalsAndRemarks[num])
-  if (num > 0) {
-    song += addBridge(num)
-    song += animalsAndRemarks[num - 1]["remark"]+'\n'
+  while (num > 0) {
+    song += addBridge(animalsAndRemarks[num], animalsAndRemarks[num - 1])
+    num--
   }
+  if (notFirst)
+    song += wrapItUp(animalsAndRemarks[num])
   return song
 }
 
