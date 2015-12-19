@@ -10,6 +10,10 @@ var animalsAndRemarks = [
   {
     "animal": `spider`,
     "remark": `It wriggled and jiggled and tickled inside her.`
+  },
+  {
+    "animal": `bird`,
+    "remark": `How absurd to swallow a bird!`
   }
 ]
 
