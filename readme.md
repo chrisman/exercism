@@ -8,7 +8,7 @@ __Working on__
 
 * JavaScript
 
-  * food-chain
+  1. grade school
 
 __Done__
 
@@ -35,6 +35,8 @@ __Done__
   1. phone-number
 
   1. anagram - I don't know if the `Array.prototype.slice.call(arguments)` trick was the best way to get it to accept arrays of strings and lists of strings.
+
+  1. food-chain - es6 string templates ftw. let's never escape strings again.
 
 __Someday/Maybe__
 
