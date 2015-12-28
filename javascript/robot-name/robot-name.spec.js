@@ -17,16 +17,16 @@ describe('Robot', function() {
     expect(robot.name).toMatch(/^[A-Z]{2}\d{3}$/);
   });
 
-  xit('name is the same each time', function() {
+  it('name is the same each time', function() {
     expect(robot.name).toEqual(robot.name);
   });
 
-  xit('different robots have different names', function() {
+  it('different robots have different names', function() {
     var differentRobot = new Robot();
     expect(differentRobot.name).not.toEqual(robot.name);
   });
 
-  xit('there can be lots of robots with different names each', function() {
+  it('there can be lots of robots with different names each', function() {
     var i,
         numRobots = 10000,
         usedNames = {};
