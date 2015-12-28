@@ -1,7 +1,6 @@
-function getRandomInt(min, max) {
+function getRandomInt(min, max){
 	return Math.floor(Math.random() * (max - min)) + min;
 }
-
 function getPrefix(){
 	return  String.fromCodePoint(getRandomInt(65, 91)) + String.fromCodePoint(getRandomInt(65, 91));
 }
@@ -13,22 +12,20 @@ function getSuffix(){
 	return collector;
 }
 function assembleName(){
-	return getPrefix() + getSuffix();
+	return (getPrefix() + getSuffix());
 }
 
-
-function Robot(){
-	this.dictionary = [];
-	this.name = getPrefix() + getSuffix();
-	
-	console.log(this.dictionary.indexOf(this.name));
-	while (this.dictionary.indexOf(this.name) !== -1) {
-		console.log('dupe entry. ' + this.name + ' has an index of ' + this.dictionary.indexOf(this.name));
-		this.name = getPrefix() + getSuffix();
+var Robot = function(){
+	var dictionary = [];
+	var someName = assembleName();
+	for (var i = 0; i < dictionary.length; i++) {
+		if (someName === dictionary[i]){
+			console.log('MATCH'); // never hitting match
+			someName = assembleName();
+		}
 	}
-	this.dictionary.push(this.name);
-	console.log(this.dictionary);
-	return;
+	dictionary.push(someName);
+	this.name = someName;
 }
 
 module.exports = Robot;
