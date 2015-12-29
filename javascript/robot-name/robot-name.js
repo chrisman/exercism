@@ -1,4 +1,8 @@
 var Robot = function(){
+	this.reset();
+}
+
+Robot.prototype.reset = function(){
 	var that = this;
 
 	return function(){
@@ -12,7 +16,6 @@ var Robot = function(){
 		that.name = someName;
 	}();
 }
-
 Robot.prototype._dictionary = [];
 Robot.prototype._getRandomInt = function(min, max){
 	return Math.floor(Math.random() * (max - min)) + min;
