@@ -1,32 +1,35 @@
-function getRandomInt(min, max){
+var Robot = function(){
+	var that = this;
+
+	return function(){
+		var someName = that._assembleName();
+		for (var i = 0; i < that._dictionary.length + 1; i++) {
+			if (someName === that._dictionary[i]){
+				someName = that._assembleName();
+			}
+		}
+		that._dictionary.push(someName);
+		that.name = someName;
+	}();
+}
+
+Robot.prototype._dictionary = [];
+Robot.prototype._getRandomInt = function(min, max){
 	return Math.floor(Math.random() * (max - min)) + min;
 }
-function getPrefix(){
-	return  String.fromCodePoint(getRandomInt(65, 91)) + String.fromCodePoint(getRandomInt(65, 91));
+Robot.prototype._getPrefix = function(){
+	return  String.fromCodePoint(this._getRandomInt(65, 91)) + String.fromCodePoint(this._getRandomInt(65, 91));
 }
-function getSuffix(){
+Robot.prototype._getSuffix = function(){
 	var collector = '';
-	for (var i = 0; i < 3; i++){
-		collector += getRandomInt(0, 10);
+	for(var i = 0; i < 3; i++){
+		collector += this._getRandomInt(0, 10);
 	}
 	return collector;
 }
-function assembleName(){
-	return (getPrefix() + getSuffix());
+Robot.prototype._assembleName = function(){
+	return (this._getPrefix() + this._getSuffix());
 }
 
-var Robot = function(){
-	var dictionary = [];
-	var someName = assembleName();
-	console.log('dictionary.length = ' + dictionary.length);
-	for (var i = 0; i < dictionary.length; i++) {
-		if (someName === dictionary[i]){
-			console.log('MATCH'); // never hitting match
-			someName = assembleName();
-		}
-	}
-	dictionary.push(someName);
-	this.name = someName;
-}
 
 module.exports = Robot;
