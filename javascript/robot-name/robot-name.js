@@ -18,6 +18,7 @@ function assembleName(){
 var Robot = function(){
 	var dictionary = [];
 	var someName = assembleName();
+	console.log('dictionary.length = ' + dictionary.length);
 	for (var i = 0; i < dictionary.length; i++) {
 		if (someName === dictionary[i]){
 			console.log('MATCH'); // never hitting match
