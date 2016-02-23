@@ -1,6 +1,5 @@
 function Anagram(str){
   this.key = str
-  return
 }
 
 Anagram.prototype.matches = function(input){
