@@ -9,7 +9,7 @@ Anagram.prototype.matches = function(input){
   if (!(Array.isArray(input)))
     input = Array.prototype.slice.call(arguments)
 
-  return input.filter(function(e){
+  return input.filter((e) => {
     var sortedElement = e.toLowerCase().split('').sort().join('')
     return (e.toLowerCase() !== key.toLowerCase()) && (sortedElement === sortedKey)
   })
