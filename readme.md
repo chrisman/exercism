@@ -40,6 +40,8 @@ __Done__
   
   1. grade school
 
+  1. ??? - robot-name: Signed into exercism for the first time in, according to exercism, 4 months. !!! Picked up where I left off. Remember being stuck hard on _robot-name_. But I guess one gets much stronger during 4 months of constant practice, bc I knocked it out pretty quick. Onward!
+
 __Someday/Maybe__
 
   * CoffeeScript
