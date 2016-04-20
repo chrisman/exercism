@@ -1,38 +1,23 @@
-var Robot = function(){
-	this.reset();
-}
-
-Robot.prototype.reset = function(){
-	var that = this;
-
-	return function(){
-		var someName = that._assembleName();
-		for (var i = 0; i < that._dictionary.length + 1; i++) {
-			if (someName === that._dictionary[i]){
-				someName = that._assembleName();
-			}
-		}
-		that._dictionary.push(someName);
-		that.name = someName;
-	}();
-}
-Robot.prototype._dictionary = [];
-Robot.prototype._getRandomInt = function(min, max){
-	return Math.floor(Math.random() * (max - min)) + min;
-}
-Robot.prototype._getPrefix = function(){
-	return  String.fromCodePoint(this._getRandomInt(65, 91)) + String.fromCodePoint(this._getRandomInt(65, 91));
-}
-Robot.prototype._getSuffix = function(){
-	var collector = '';
-	for(var i = 0; i < 3; i++){
-		collector += this._getRandomInt(0, 10);
-	}
-	return collector;
-}
-Robot.prototype._assembleName = function(){
-	return (this._getPrefix() + this._getSuffix());
-}
+var compose = (f, g) => x => f(g(x));
+var numToChar = n => String.fromCharCode(n);
+var randomInRange = (min, max) => 
+  () => Math.floor(Math.random() * (max - min) + min);
+var randCharNum = randomInRange(65, 90);
+var randChar = compose(numToChar, randCharNum)
+var randNumNum = randomInRange(0, 9);
+var add = (x, y) => x + y;
+var robotName = () => add(
+  randChar(), add(
+    randChar(), 
+    add(
+      randNumNum(),
+      add(
+        randNumNum(),
+        randNumNum()
+      )
+    )
+  )
+);
 
 
 module.exports = Robot;
