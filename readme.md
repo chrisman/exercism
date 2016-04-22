@@ -4,15 +4,9 @@ Let's do an [exercism.io](http://exercism.io/)
 
 [http://exercism.io/chrisman]()
 
-__Working on__
+## Notes ##
 
-* JavaScript
-
-  1. robot-name
-
-__Done__
-
-* JavaScript
+__JavaScript__
 
   1. hello-world
 
@@ -41,6 +35,12 @@ __Done__
   1. grade school
 
   1. ??? - robot-name: Signed into exercism for the first time in, according to exercism, 4 months. !!! Picked up where I left off. Remember being stuck hard on _robot-name_. But I guess one gets much stronger during 4 months of constant practice, bc I knocked it out pretty quick. Onward!
+
+  1. ETL - Extract/Transform/Load. Glad to know there's a word for that. Pretty easy object to object transformation. Wish there was an easier way to _reduce_ an objest..
+
+  1. Space Age - pretty straight forward. set a constant earthyear, and a dictionary of planets and years based earthyear.
+
+  2. grains - fun playing with BigInt. i think i should rewrite this (maybe most of these) using object prototypes so i'm not exporting the whole kit and kaboodle each time...
 
 __Someday/Maybe__
 
