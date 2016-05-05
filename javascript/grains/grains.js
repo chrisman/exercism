@@ -1,13 +1,7 @@
 "use strict";
 
 var BigInt = require('./big-integer');
-var range = (start, end) => {
-  let array = [];
-  for(let i = start; i <= end; i++) {
-    array.push(i);
-  }
-  return array;
-}
+var range = (start, end) => Array.from({ length: end - start + 1 }, (_, i) => i + start);
 
 module.exports = function(){
   const BASE = BigInt(2);
