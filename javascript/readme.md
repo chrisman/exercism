@@ -37,3 +37,5 @@ __JavaScript__
   2. grains - fun playing with BigInt. i think i should rewrite this (maybe most of these) using object prototypes so i'm not exporting the whole kit and kaboodle each time...
 
   1. triangle - es2015 spread
+
+  2. clock - `return this` = method chaining. node still doesn't support default params = operator overloading. 
