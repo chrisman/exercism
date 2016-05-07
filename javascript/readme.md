@@ -39,3 +39,5 @@ __JavaScript__
   1. triangle - es2015 spread
 
   2. clock - `return this` = method chaining. node still doesn't support default params = operator overloading. 
+
+  1. acronym - pretty easy. don't get to play with regex all the time.
