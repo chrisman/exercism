@@ -1,17 +1,19 @@
 // regex //
 const CAMEL_CASE = /([a-z])([A-Z][a-z])/g;
-const CAMEL_TO_SPACE = '$1 $2';
+const TO_SPACES = '$1 $2';
 const SPLITS = /[\s-]/;
 
 // helpers //
 var head = s => s[0];
 var upper = s => s.toUpperCase();
+var acronym = x => upper(head(x));
+var add = (x, y) => x + y;
 
 var parse = s => s
-  .replace(CAMEL_CASE, CAMEL_TO_SPACE)
+  .replace(CAMEL_CASE, TO_SPACES)
   .split(SPLITS)
-  .map( e => upper(head(e)))
-  .join('');
+  .map(acronym)
+  .reduce(add);
 
 module.exports = {
   parse: parse
