@@ -41,3 +41,5 @@ __JavaScript__
   2. clock - `return this` = method chaining. node still doesn't support default params = operator overloading. 
 
   1. acronym - pretty easy. don't get to play with regex all the time.
+
+  1. scrabble_score - also pretty simple. fun. i wonder if there's a way to work around the temp return variable in LOOKUP.
