@@ -43,3 +43,5 @@ __JavaScript__
   1. acronym - pretty easy. don't get to play with regex all the time.
 
   1. scrabble_score - also pretty simple. fun. i wonder if there's a way to work around the temp return variable in LOOKUP.
+
+  1. roman numerals - toughie! Had to think that one through a while. I'd prefer to define the dictionary with just the base numbers, and dynamically add the "subtraction numbers"
