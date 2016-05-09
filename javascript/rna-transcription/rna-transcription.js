@@ -9,7 +9,7 @@ var add = (x, y) => x + y;
 var lookup = e => dict[e];
 var reverse_lookup = e =>
   Object.keys(dict)
-    .filter( i => dict[i] === e)
+    .filter( i => dict[i] === e )
     .reduce(add);
 var convert = f => 
   s => Array.from(s)
