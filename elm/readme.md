@@ -7,3 +7,5 @@ whoo-whee, functional programming
 2. bob - neat-o cases and tuples.
 
 3. leap - `let` .. `in`. dat's cool.
+
+4. raindrops - _plingplangplong._ wanted to make this resursive until i realized they didn't want repeated syllables.
