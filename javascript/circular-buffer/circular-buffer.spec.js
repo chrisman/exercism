@@ -9,15 +9,15 @@ describe('CircularBuffer', function() {
     expect(buffer.read).toThrow(bufferEmptyException());
   });
 
-  xit('write and read back one item', function() {
+  it('write and read back one item', function() {
     var buffer = circularBuffer(1);
     buffer.write('1');
     expect(buffer.read()).toBe('1');
     expect(buffer.read).toThrow(bufferEmptyException());
   });
 
-  xit('write and read back multiple items', function() {
-    var buffer = circularBuffer(2);
+  it('write and read back multiple items', function() {
+    var buffer = circularBuffer(3);
     buffer.write('1');
     buffer.write('2');
     expect(buffer.read()).toBe('1');
