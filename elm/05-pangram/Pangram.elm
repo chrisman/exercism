@@ -7,5 +7,13 @@ import Char exposing (isLower)
 type alias Sentence = String
 
 isPangram : Sentence -> Bool
-isPangram s =
-  length (toList (fromList (split "" (filter isLower (toLower s))))) == 26
+isPangram sentence =
+  let letters = sentence
+    |> toLower
+    |> filter isLower
+    |> split ""
+    |> fromList
+    |> toList
+    |> length
+  in
+    letters == 26

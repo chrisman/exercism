@@ -7469,19 +7469,18 @@ var _elm_lang$core$Set$partition = F2(
 		};
 	});
 
-var _exercism$xelm$Pangram$isPangram = function (s) {
-	return _elm_lang$core$Native_Utils.eq(
-		_elm_lang$core$List$length(
-			_elm_lang$core$Set$toList(
-				_elm_lang$core$Set$fromList(
+var _exercism$xelm$Pangram$isPangram = function (sentence) {
+	var letters = _elm_lang$core$List$length(
+		_elm_lang$core$Set$toList(
+			_elm_lang$core$Set$fromList(
+				A2(
+					_elm_lang$core$String$split,
+					'',
 					A2(
-						_elm_lang$core$String$split,
-						'',
-						A2(
-							_elm_lang$core$String$filter,
-							_elm_lang$core$Char$isLower,
-							_elm_lang$core$String$toLower(s)))))),
-		26);
+						_elm_lang$core$String$filter,
+						_elm_lang$core$Char$isLower,
+						_elm_lang$core$String$toLower(sentence))))));
+	return _elm_lang$core$Native_Utils.eq(letters, 26);
 };
 
 var _exercism$xelm$Main$tests = A2(
