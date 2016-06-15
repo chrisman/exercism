@@ -9,3 +9,5 @@ whoo-whee, functional programming
 3. leap - `let` .. `in`. dat's cool.
 
 4. raindrops - _plingplangplong._ wanted to make this resursive until i realized they didn't want repeated syllables.
+
+5. pangram - that was fun! how can i compose these functions, or improve the readability of my code?
