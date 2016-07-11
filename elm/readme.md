@@ -11,3 +11,5 @@ whoo-whee, functional programming
 4. raindrops - _plingplangplong._ wanted to make this resursive until i realized they didn't want repeated syllables.
 
 5. pangram - second iteration = much more readable. learned `|>` piping. :thumbsup: next I'll have to consider `<<` composition
+
+6. accumulate - took me a second to work out list matching and recursion
