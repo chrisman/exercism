@@ -47,3 +47,5 @@ __JavaScript__
   1. roman numerals - toughie! Had to think that one through a while. I'd prefer to define the dictionary with just the base numbers, and dynamically add the "subtraction numbers"
 
   2. isogram - went through several iterations. Finally removed all of my usual functional stuff bc it wasn't really needed. Used es2015 class notation, and the Set datatype _radically_ simplified handling duplicate values.
+
+  3. circular_buffer - :D
