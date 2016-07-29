@@ -1,37 +1,36 @@
-const BUFFER_EMPTY_EXCEPTION = "cannot read empty buffer";
-const BUFFER_FULL_EXCEPTION = "cannot write to full buffer";
+const emptyException = () =>
+  "Cannot read empty buffer";
+const fullException = () =>
+  "Use forceWrite to overwrite buffer";
 
-function bufferException(msg){
-  this.message = msg;
-  this.name = "BufferException";
-}
-
-function circularBuffer(s) {
-  let _buffer = Array.from({length: s});
-  let undefinedFilter = (e) => typeof e === 'undefined';
-  let emptyBuffer = (arr) => arr.filter(undefinedFilter).length === arr.length;
-
-  function read(){
-    if (emptyBuffer(_buffer))
-      throw new bufferException(BUFFER_EMPTY_EXCEPTION);
-    return _buffer.pop();
-  };
-
-  function write(x){
-    _buffer = _buffer.map(e => x);
-  };
+function buffer(size) {
+  var b = new Array();
+  var size = size;
 
   return {
-    read: read,
-    write: write
+    read: function() {
+      if (b[0]) return b.shift();
+      else throw emptyException();
+    },
+    write: function(val) {
+      if (b.length == size) throw fullException();
+      else if (val) b.push(val);
+    },
+    forceWrite: function(val) {
+      if (b.length < size) {
+        this.write(val);
+      } else {
+        b.shift(); b.push(val);
+      }
+    },
+    clear: function() {
+      b = new Array();
+    }
   }
 }
 
-
 module.exports = {
-  circularBuffer: circularBuffer,
-  bufferEmptyException: () =>
-    "cannot read empty buffer",
-  bufferFullException: () =>
-    "cannot write to full buffer"
+  circularBuffer: buffer,
+  bufferEmptyException: emptyException,
+  bufferFullException: fullException
 }
