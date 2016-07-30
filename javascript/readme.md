@@ -49,3 +49,5 @@ __JavaScript__
   2. isogram - went through several iterations. Finally removed all of my usual functional stuff bc it wasn't really needed. Used es2015 class notation, and the Set datatype _radically_ simplified handling duplicate values.
 
   3. circular_buffer - :D two implementations: a 'real' one, and a cheating one using parseInt: `git diff 899a25f 5667422`
+
+  3. prime_factors - included three solutions. I wrote a tail call optimized recursive function, and a trampoline it execute it. Had never done that before. That was new!
