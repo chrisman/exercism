@@ -51,3 +51,5 @@ __JavaScript__
   3. circular_buffer - :D two implementations: a 'real' one, and a cheating one using parseInt: `git diff 899a25f 5667422`
 
   3. prime_factors - included three solutions. I wrote a tail call optimized recursive function, and a trampoline it execute it. Had never done that before. That was new!
+
+  2. raindrops - fizzbuzz problem. tried some functional error handling featuring Left.of, Right.of, and either
