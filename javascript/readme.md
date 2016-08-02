@@ -54,4 +54,6 @@ __JavaScript__
 
   2. raindrops - fizzbuzz problem. tried some functional error handling featuring Left.of, Right.of, and either
 
-  1. allergies - not much to report. used a recursive solution. made sure it was tail call optimized, but didn't exploit the fact.
+  1. allergies - not much to report. used a recursive solution. made sure it was tail call optimized, but didn't exploit the fact. TODO: is there a bitwise solution?
+
+  2. strain - implement a filter.
