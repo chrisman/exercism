@@ -1,49 +1,26 @@
-const DICT = {
-  '1': 'eggs',
-  '2': 'peanuts',
-  '4': 'shellfish',
-  '8': 'strawberries',
-  '16': 'tomatoes',
-  '32': 'chocolate',
-  '64': 'pollen',
-  '128': 'cats'
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Flags_and_bitmasks
+const FLAGS = {
+  'eggs'         : 1,  // 00000001
+  'peanuts'      : 2,  // 00000010
+  'shellfish'    : 4,  // 00000100
+  'strawberries' : 8,  // 00001000
+  'tomatoes'     : 16, // 00010000
+  'chocolate'    : 32, // 00100000
+  'pollen'       : 64, // 01000000
+  'cats'         : 128 // 10000000
 };
 
-// helpers
-var uniq = (elem, idx, arr) => arr.indexOf(elem) === idx;
-var last = (arr) => arr[arr.length - 1];
-var has = (arr) => (x) => arr.indexOf(x) !== -1;
-
-// main function
-var allergies = (score) => (arr) => {
-
-  var recur = (i) => (a) => (res) => 
-    (a.length === 0)
-      ? res
-      : recur 
-        (i - last(a)) 
-        (a.filter(x => x <= i - last(a)))
-        ([DICT[last(a)]].concat(res));
-
-  return recur(score)(arr)([]);
-}
-
 class Allergies {
-  constructor(score) {
-    this.score = score;
-  } 
+  constructor(flags) {
+    this.flags = flags;
+  }
 
   list() {
-    return allergies
-      (this.score) 
-      (Object.keys(DICT).filter(x => x <= this.score))
-    .filter(uniq);
+    return Object.keys(FLAGS).filter((k) => this.allergicTo(k));
   }
 
   allergicTo(str) {
-    return has
-      (this.list())
-      (str);
+    return !!(FLAGS[str] & this.flags);
   }
 }
 
