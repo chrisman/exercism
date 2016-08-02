@@ -1,4 +1,4 @@
-const dict = {
+const DICT = {
   '1': 'eggs',
   '2': 'peanuts',
   '4': 'shellfish',
@@ -9,37 +9,41 @@ const dict = {
   '128': 'cats'
 };
 
-var test = (idx) => (arr) => (coll) => {
-  if (arr.length === 0)
-    return coll;
-  var last = arr[arr.length - 1];
-  return test 
-    (idx - last) 
-    (arr.filter(x => x <= idx - last))
-    ([dict[last]].concat(coll));
-}
+// helpers
+var uniq = (elem, idx, arr) => arr.indexOf(elem) === idx;
+var last = (arr) => arr[arr.length - 1];
+var has = (arr) => (x) => arr.indexOf(x) !== -1;
 
-var lesser = (x) => (y) => x < y ? x : y;
+// main function
+var allergies = (score) => (arr) => {
+
+  var recur = (i) => (a) => (res) => 
+    (a.length === 0)
+      ? res
+      : recur 
+        (i - last(a)) 
+        (a.filter(x => x <= i - last(a)))
+        ([DICT[last(a)]].concat(res));
+
+  return recur(score)(arr)([]);
+}
 
 class Allergies {
   constructor(score) {
-    this.score = this._sanitize(score);
+    this.score = score;
   } 
 
-  _sanitize(num) {
-    var max = Object.keys(dict).reduce((x, y) => +x + +y);
-    return lesser(num)(max);
-  }
-
   list() {
-    return test
+    return allergies
       (this.score) 
-      (Object.keys(dict).filter(x => x <= this.score)) 
-      ([]);
+      (Object.keys(DICT).filter(x => x <= this.score)) 
+    .filter(uniq);
   }
 
   allergicTo(str) {
-    return this.list().indexOf(str) !== -1;
+    return has
+      (this.list())
+      (str);
   }
 }
 

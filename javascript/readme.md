@@ -53,3 +53,5 @@ __JavaScript__
   3. prime_factors - included three solutions. I wrote a tail call optimized recursive function, and a trampoline it execute it. Had never done that before. That was new!
 
   2. raindrops - fizzbuzz problem. tried some functional error handling featuring Left.of, Right.of, and either
+
+  1. allergies - not much to report. used a recursive solution. made sure it was tail call optimized, but didn't exploit the fact.
