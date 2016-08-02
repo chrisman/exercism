@@ -36,7 +36,7 @@ class Allergies {
   list() {
     return allergies
       (this.score) 
-      (Object.keys(DICT).filter(x => x <= this.score)) 
+      (Object.keys(DICT).filter(x => x <= this.score))
     .filter(uniq);
   }
 
