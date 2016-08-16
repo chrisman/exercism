@@ -57,3 +57,5 @@ __JavaScript__
   1. allergies - not much to report. used a recursive solution. made sure it was tail call optimized, but didn't exploit the fact. TODO: is there a bitwise solution? __UPDATE__ bitwise and, and bitmasks ftw!!
 
   2. strain - implement a filter.
+
+  3. sieve - The Sieve of Erazamus! terse recursion. are these getting easier?
