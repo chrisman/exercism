@@ -59,3 +59,7 @@ __JavaScript__
   2. strain - implement a filter.
 
   3. sieve - The Sieve of Erazamus! terse recursion. are these getting easier?
+
+  3. octal - oh cool, another binary/trinary exercise
+
+  2. luhn - that's fun!
