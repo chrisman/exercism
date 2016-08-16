@@ -63,3 +63,5 @@ __JavaScript__
   3. octal - oh cool, another binary/trinary exercise
 
   2. luhn - that's fun!
+
+  3. pig-latin - meh. don't love my solution. it's fine.
