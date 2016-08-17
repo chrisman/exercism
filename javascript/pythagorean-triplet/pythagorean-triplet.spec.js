@@ -26,7 +26,7 @@ describe('Triplet', function () {
     expect(products).toEqual([60, 480]);
   });
 
-  xit('can make triplets 11 through 20', function () {
+  it('can make triplets 11 through 20', function () {
     var triplets = Triplet.where({ minFactor: 11, maxFactor: 20 });
     var products = triplets.sort().map( function (triplet) {
       return triplet.product();
@@ -34,7 +34,7 @@ describe('Triplet', function () {
     expect(products).toEqual([3840]);
   });
 
-  xit('can filter on sum', function () {
+  it('can filter on sum', function () {
     var triplets = Triplet.where({ sum: 180, maxFactor: 100 });
     var products = triplets.sort().map( function (triplet) {
       return triplet.product();
