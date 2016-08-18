@@ -65,3 +65,7 @@ __JavaScript__
   2. luhn - that's fun!
 
   3. pig-latin - meh. don't love my solution. it's fine.
+
+  2. pythagorean-triplets - that was tuff
+
+  2. series - another soft ball
