@@ -69,3 +69,5 @@ __JavaScript__
   2. pythagorean-triplets - that was tuff
 
   2. series - another soft ball
+  
+  3. difference of squares - too easy
