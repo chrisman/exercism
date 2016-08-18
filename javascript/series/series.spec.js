@@ -6,27 +6,27 @@ describe('Series', function () {
     expect(new Series('01234').digits).toEqual([0, 1, 2, 3, 4]);
   });
 
-  xit('has digits (long)', function () {
+  it('has digits (long)', function () {
     expect(new Series('0123456789').digits)
       .toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
   });
 
-  xit('keeps the digit order if reversed', function () {
+  it('keeps the digit order if reversed', function () {
     expect(new Series('9876543210').digits)
       .toEqual([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
   });
 
-  xit('keeps arbitrary digit order', function () {
+  it('keeps arbitrary digit order', function () {
     expect(new Series('936923468').digits)
       .toEqual([9, 3, 6, 9, 2, 3, 4, 6, 8]);
   });
 
-  xit('can slice by 1', function () {
+  it('can slice by 1', function () {
     expect(new Series('01234').slices(1))
       .toEqual([[0], [1], [2], [3], [4]]);
   });
 
-  xit('can slice by 2', function () {
+  it('can slice by 2', function () {
     expect(new Series('98273463').slices(2))
       .toEqual([[9, 8], [8, 2], [2, 7], [7, 3], [3, 4], [4, 6], [6, 3]]);
   });
