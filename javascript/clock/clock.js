@@ -1,39 +1,42 @@
 "use strict"
 
+const DAY = 60 * 24;
+
 class Clock {
   constructor(h, m) {
-    this.hour = h;
-    this.minute = m || 0;
+    this.time = (h * 60 + (m || 0)) % (DAY);
+
+    if (this.time < 0) this.time += DAY;
+
+    return this;
   }
 
   toString() {
-    return `${pad(this.hour)}:${pad(this.minute)}`;
+    let hh = this._pad(Math.floor(this.time / 60));
+    let mm = this._pad(Math.floor(this.time % 60));
+
+    return `${hh}:${mm}`;
   }
 
   plus(m) {
-    this.minute += m;
-    this.hour += Math.floor(this.minute / 60);
-    this.hour %= 24;
-    this.minute %= 60;
-    return this;
+    return new Clock(0, this.time + m);
   }
 
   minus(m) {
-    this.plus(m * -1);
-    if (this.minute < 0) this.minute += 60;
-    if (this.hour < 0) this.hour += 24;
-    return this;
+    return new Clock(0, this.time - m);
   }
 
   equals(c){
-    return this.toString() === c.toString();
+    return this.time === c.time;
+  }
+
+  static at(h, m) {
+    return new Clock(h, m);
+  }
+
+  _pad(s) {
+    return (s.toString().length === 1) ? ('0' + s) : s; 
   }
 }
 
-var pad = (s) => (s.toString().length == 1) ? ('0' + s) : s;
-
-var at = (h, m) => new Clock(h, m);
-
-module.exports = {
-  at: at
-};
+module.exports = Clock;
