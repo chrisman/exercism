@@ -11,21 +11,28 @@ const STUDENTS = [
   'ileana' , 'joseph' , 'kincaid' , 'larry'
 ];
 
-function Garden(garden, students = STUDENTS) {
-  return students
-    .sort()
-    .map(s => s.toLowerCase())
-    .reduce((o, c, i) => {
-      o[c] = parse(garden)(i);
-      return o;
-    }
-    , {});
+function Garden(theGarden, theStudents = STUDENTS) {
+  this.garden   = theGarden;
+  this.students = theStudents;
+
+  this.init();
 }
 
-var parse = (str) => (i) => str
-  .split('\n')
-  .map(s => s.slice(i * 2, i *2 + 2))
-  .map(s => Array.from(s).map(s => DICT[s]))
-  .reduce((acc, curr) => acc.concat(curr), [])
+Garden.prototype = {
+  constructor: Garden,
+
+  init: function() { 
+    this.students
+      .sort()
+      .map(s => s.toLowerCase())
+      .forEach((stdnt, i) => {
+        this[stdnt] = this.garden
+          .split('\n')                               // split at line break
+          .map(s => s.slice(i * 2, i * 2 + 2))       // map to slices
+          .map(s => Array.from(s).map(s => DICT[s])) // slice -> [plant, plant]
+          .reduce((a, el) => a.concat(el));          // array flattener
+      });
+  }
+}
 
 module.exports = Garden;
