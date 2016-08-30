@@ -6,6 +6,9 @@ function Node(d) {
 
 function BinarySearchTree(d) {
   Node.call(this, d);
+
+  this.left  = new Node();
+  this.right = new Node();
 }
 
 BinarySearchTree.prototype = {
@@ -19,18 +22,17 @@ module.exports = BinarySearchTree;
 function myInsert(d) {
 
   function inner(n, d) {
-    if (d <= n.data) {
-      if (!n.left)
-        n.left = new Node(d);
-      else 
-        return inner(n.left, d);
+    if (!n.data) {
+      n.data  = d;
+      n.left  = new Node();
+      n.right = new Node();
+      return;
     }
-    else if (d > n.data) {
-      if (!n.right)
-        n.right = new Node(d);
-      else 
-        return inner(n.right, d);
-    }
+
+    if (d <= n.data) 
+      inner(n.left, d);
+    if (d > n.data) 
+      inner(n.right, d);
   }
 
   return inner(this, d);
@@ -38,10 +40,14 @@ function myInsert(d) {
 
 function myEach(fn) {
 
-  function inner(n, cb) {
-    if (n.left) inner(n.left, cb);
-    cb(n.data);
-    if (n.right) inner(n.right, cb);
+  function inner(n, f) {
+    if (n.left.data) 
+      inner(n.left, f);
+
+    f(n.data);
+
+    if (n.right.data) 
+      inner(n.right, f);
   }
 
   return inner(this, fn);
