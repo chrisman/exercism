@@ -90,4 +90,4 @@ __JavaScript__
 
   2. binary search tree
 
-  2. matrix
+  2. matrix - could be more pure..
