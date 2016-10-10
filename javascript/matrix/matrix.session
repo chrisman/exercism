@@ -1,0 +1,112 @@
+let SessionLoad = 1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/exercism/javascript/matrix
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +17 README.md
+badd +1 matrix.spec.js
+badd +1 term://.//8394:zsh
+badd +1 matrix.js
+argglobal
+silent! argdel *
+edit matrix.js
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd t
+set winheight=1 winwidth=1
+exe 'vert 1resize ' . ((&columns * 63 + 63) / 127)
+exe '2resize ' . ((&lines * 17 + 19) / 38)
+exe 'vert 2resize ' . ((&columns * 63 + 63) / 127)
+exe '3resize ' . ((&lines * 18 + 19) / 38)
+exe 'vert 3resize ' . ((&columns * 63 + 63) / 127)
+argglobal
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+2
+normal! zo
+3
+normal! zo
+8
+normal! zo
+let s:l = 9 - ((8 * winheight(0) + 18) / 36)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+9
+normal! 05|
+wincmd w
+argglobal
+edit matrix.spec.js
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=3
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+5
+normal! zo
+14
+normal! zo
+let s:l = 14 - ((7 * winheight(0) + 8) / 17)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+14
+normal! 03|
+wincmd w
+argglobal
+edit term://.//8394:zsh
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+let s:l = 454 - ((17 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+454
+normal! 0
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 63 + 63) / 127)
+exe '2resize ' . ((&lines * 17 + 19) / 38)
+exe 'vert 2resize ' . ((&columns * 63 + 63) / 127)
+exe '3resize ' . ((&lines * 18 + 19) / 38)
+exe 'vert 3resize ' . ((&columns * 63 + 63) / 127)
+tabnext 1
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
