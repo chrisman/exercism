@@ -71,3 +71,23 @@ __JavaScript__
   2. series - another soft ball
   
   3. difference of squares - too easy
+
+  3. secret handshake - bitwise math ftw
+
+  2. linked list (**Note** I apparently did a bunch of exercises here w/o taking any notes ¯\_(ツ)_/¯)
+
+  3. wordy
+
+  3. flatten array
+
+  3. hexadecimal
+
+  3. largest series product
+
+  2. kindergarten garden
+
+  2. binary search
+
+  2. binary search tree
+
+  2. matrix
