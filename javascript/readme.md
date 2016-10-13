@@ -95,3 +95,5 @@ __JavaScript__
   3. robot-simulator - that was neat!
 
   2. nth-prime - probably a better way of doing that.. This is yet another test suite that demonstrates how the `new` keyword is problematic. I assume this happens when the author of the test suite doesn't fully understand prototypal inheritance. No matter, it's good practice for recognizing the need for writing static vs instance methods based on implementation.
+
+  2. palindrome-products - that was fun.
