@@ -29,7 +29,7 @@ PalindromeProducts.prototype._reduce = function(fn) {
 
 PalindromeProducts.prototype.generate = function() {
   for(let i = this.min; i <= this.max; i++) {
-    for(let j = this.min; j <= this.max && j <= i; j++) {
+    for(let j = this.min; j <= i; j++) {
       let product = i * j;
       let isPalindrome = this._isPalindrome(product);
 
