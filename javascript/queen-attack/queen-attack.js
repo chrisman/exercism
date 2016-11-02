@@ -3,30 +3,32 @@ const DEFAULT = {
   black: [7, 3]
 };
 
-const ERRORS = {
+const errors = {
   collision: 'Queens cannot share the same space'
 }
 
-const collision = o =>
-  o.white[0] === o.black[0]
-  && o.white[1] === o.black[1];
-
 function QueenAttack(config = DEFAULT) {
-  if (collision(config))
-    throw ERRORS.collision;
+  this.w = new Point();
+  this.b = new Point();
+  Point.apply(this.w, config.white);
+  Point.apply(this.b, config.black);
 
-  Object.assign(this, config);
+  if (this.w.eql(this.b))
+    throw errors.collision;
+
+  this.white = this.w.print();
+  this.black = this.b.print();
 }
 
 QueenAttack.prototype.toString = function() {
   const len = 8;
 
   let board = Array.from({length: len})
-    .map(x => Array.from({length: len})
+    .map(y => Array.from({length: len})
       .map(x => '_'));
 
-  board[this.white[0]][this.white[1]] = 'W';
-  board[this.black[0]][this.black[1]] = 'B';
+  board[this.w.x][this.w.y] = 'W';
+  board[this.b.x][this.b.y] = 'B';
 
   return board
     .map(a => a.join(' '))
@@ -35,16 +37,31 @@ QueenAttack.prototype.toString = function() {
 }
 
 QueenAttack.prototype.canAttack = function() {
-  const sameRow = a => b => a[0] === b[0];
+  const sameRow = a => b => a.x === b.x;
 
-  const samecol = a => b => a[1] === b[1];
+  const sameCol = a => b => a.y === b.y;
 
   const diag = a => b =>
-    Math.abs((a[0] - b[0]) / (a[1] - b[1])) === 1;
+    Math.abs((a.x - b.x) / (a.y - b.y)) === 1;
 
-  return sameRow(this.white)(this.black)
-    || samecol(this.white)(this.black)
-    || diag(this.white)(this.black)
+  return sameRow(this.w)(this.b)
+    || sameCol(this.w)(this.b)
+    || diag(this.w)(this.b)
 }
 
 module.exports = QueenAttack;
+
+
+// Helper Class //
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
+}
+
+Point.prototype.print = function() {
+  return [this.x, this.y];
+}
+
+Point.prototype.eql = function(p) {
+  return this.x === p.x && this.y === p.y;
+}
