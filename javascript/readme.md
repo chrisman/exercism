@@ -101,3 +101,8 @@ __JavaScript__
   2. say - :(
 
   3. custom-set - blah
+
+  2. saddle-points - sometimes matrixes are tuff
+
+  2. OCR - this gonna be fun!
+
