@@ -6,11 +6,13 @@ function Matrix(str) {
       .map(s => +s));
 
   const toCols = s => toRows(s)
-    .map((x, i, a) => {
+    .map((_, i, a) => {
       let acc = [];
+
       a.forEach(r => {
         acc.push(r[i]);
       });
+
       return acc;
     });
 
@@ -20,20 +22,16 @@ function Matrix(str) {
   const isSaddlePoint = n => r => c =>
     n >= r && n <= c;
 
-  const rs = this.rows.length;
-  const cs = this.columns.length;
-
   let saddlepoints = [];
 
-  for(let y = 0; y < rs; y++) {
-    for(let x = 0; x < cs; x++) {
-      if (isSaddlePoint
+  for(let y = 0; y < this.rows.length; y++) {
+    for(let x = 0; x < this.columns.length; x++) {
+      saddlepoints = isSaddlePoint
         (this.rows[x][y])
-        (this.rows[x].reduce(greatest))
-        (this.columns[y].reduce(least))
-      ) {
-        saddlepoints.push([x, y]);
-      }
+        (Math.max.apply(null, this.rows[x]))
+        (Math.min.apply(null, this.columns[y]))
+      ? saddlepoints.concat([[x, y]])
+      : saddlepoints
     }
   }
 
@@ -41,7 +39,3 @@ function Matrix(str) {
 }
 
 module.exports = Matrix;
-
-// HELPER FUNCS //
-const greatest = (x, y) => x >= y ? x : y;
-const least = (x, y) => x < y ? x : y;
