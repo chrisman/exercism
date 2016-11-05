@@ -104,5 +104,5 @@ __JavaScript__
 
   2. saddle-points - sometimes matrixes are tuff
 
-  2. OCR - this gonna be fun!
+  2. OCR - this was fun!
 
