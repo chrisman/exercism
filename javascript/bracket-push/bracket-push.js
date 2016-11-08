@@ -7,14 +7,14 @@ const brackets = {
 function BracketPush(str) {
   let coll = [];
 
-  str.split('').forEach(c => {
+  for(let c of str) {
     if (has(keys(brackets))(c))
       coll.push(brackets[c]);
     else if (last(coll) === c)
       coll.pop();
     else
       coll.push(c);
-  });
+  };
 
   return empty(coll);
 }
