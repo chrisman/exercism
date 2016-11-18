@@ -1,0 +1,168 @@
+let SessionLoad = 1
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd ~/exercism/javascript/bowling
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +5 bowling.spec.js
+badd +0 term://.//40140:zsh
+badd +0 bowling.js
+badd +35 term://.//41115:/bin/zsh
+badd +69 ../ocr-numbers/ocr-numbers.js
+argglobal
+silent! argdel *
+argadd bowling.spec.js
+edit bowling.js
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd t
+set winheight=1 winwidth=1
+exe '1resize ' . ((&lines * 31 + 18) / 37)
+exe 'vert 1resize ' . ((&columns * 69 + 63) / 127)
+exe '2resize ' . ((&lines * 3 + 18) / 37)
+exe 'vert 2resize ' . ((&columns * 69 + 63) / 127)
+exe '3resize ' . ((&lines * 18 + 18) / 37)
+exe 'vert 3resize ' . ((&columns * 57 + 63) / 127)
+exe '4resize ' . ((&lines * 16 + 18) / 37)
+exe 'vert 4resize ' . ((&columns * 57 + 63) / 127)
+argglobal
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+2
+normal! zo
+3
+normal! zo
+8
+normal! zo
+14
+normal! zo
+18
+normal! zo
+22
+normal! zo
+31
+normal! zo
+34
+normal! zo
+37
+normal! zo
+40
+normal! zo
+46
+normal! zo
+52
+normal! zo
+57
+normal! zo
+58
+normal! zo
+62
+normal! zo
+66
+normal! zo
+let s:l = 75 - ((17 * winheight(0) + 15) / 31)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+75
+normal! 031|
+wincmd w
+argglobal
+enew
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+wincmd w
+argglobal
+edit bowling.spec.js
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=4
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+4
+normal! zo
+5
+normal! zo
+72
+normal! zo
+87
+normal! zo
+108
+normal! zo
+115
+normal! zo
+let s:l = 122 - ((3 * winheight(0) + 9) / 18)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+122
+normal! 056|
+wincmd w
+argglobal
+edit term://.//40140:zsh
+setlocal fdm=indent
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=10
+setlocal fen
+let s:l = 1016 - ((15 * winheight(0) + 8) / 16)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1016
+normal! 026|
+wincmd w
+exe '1resize ' . ((&lines * 31 + 18) / 37)
+exe 'vert 1resize ' . ((&columns * 69 + 63) / 127)
+exe '2resize ' . ((&lines * 3 + 18) / 37)
+exe 'vert 2resize ' . ((&columns * 69 + 63) / 127)
+exe '3resize ' . ((&lines * 18 + 18) / 37)
+exe 'vert 3resize ' . ((&columns * 57 + 63) / 127)
+exe '4resize ' . ((&lines * 16 + 18) / 37)
+exe 'vert 4resize ' . ((&columns * 57 + 63) / 127)
+tabnext 1
+if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :
