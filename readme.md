@@ -6,12 +6,12 @@ Let's do an exercism!
 
 ## workin on ##
 
-* __elm__
+* elm
 
-* __go__
+* go
 
 ## complete tracks ##
 
-* __javascript__
+* [javascript](/javascript)
 
 
